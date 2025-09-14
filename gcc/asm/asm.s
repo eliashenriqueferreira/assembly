@@ -3,8 +3,17 @@
 #####################################################
 #: Ideal para comentários de uma única linha.
 /* : Útil para comentários que se estendem por várias linhas ou para comentar um bloco de código. */
+/*
+Devemos verificar se a architetura é 64 bits com o comando arch:
+{0} CentOS7 root@WSLCENTOS7 ~/srcGit/assembly/gcc/asm  (main)
+2025-09-14 19:57:30 $ arch
+x86_64
+*/
 
-/* Devemos compilar como : "gcc -o asm asm.o -nostdlib" para que não haja comflito com o entry_point do stdlib da linguagem C */
+/* Devemos compilar como : "gcc -o asm asm.o -nostdlib" para que não haja comflito com o entry_point do stdlib da linguagem C 
+Dependendo da versão do gcc devemos acrescentar a flag -no-pie.
+-no-pie --> Don't produce a dynamically linked position independent executable.
+*/
 .global _start # Assim como todo programa precisamos de um entry_point
 .intel_syntax noprefix
 
